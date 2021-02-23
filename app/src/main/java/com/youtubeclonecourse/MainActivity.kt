@@ -2,6 +2,7 @@ package com.youtubeclonecourse
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.youtubeclonecourse.Adapter.VideosAdapter
 import com.youtubeclonecourse.Model.addVideos
@@ -14,5 +15,12 @@ class MainActivity : AppCompatActivity() {
 
         recycler_videos.adapter =VideosAdapter(addVideos())
         recycler_videos.layoutManager = LinearLayoutManager(this)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+
+        val inflate = menuInflater
+        inflate.inflate(R.menu.menu_youtube, menu)
+        return true
     }
 }
